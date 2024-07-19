@@ -29,7 +29,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
-    'Optimumapi',
+    'OptimumAPI',
 ]
 
 REST_FRAMEWORK = {
@@ -60,7 +60,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Optimumproject.urls'
+ROOT_URLCONF = 'OptimumProject.urls'
 
 TEMPLATES = [
     {
@@ -78,7 +78,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Optimumproject.wsgi.application'
+WSGI_APPLICATION = 'OptimumProject.wsgi.application'
 
 
 # Database
