@@ -1,0 +1,26 @@
+[
+    {
+        "model": "OptimumAPI.article",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "tag": 1,
+            "image": "",
+            "title": "Some Title",
+            "article_content": "Content of the article goes here...",
+            "created_date": "2023-07-19"
+        }
+    },
+    {
+        "model": "OptimumAPI.article",
+        "pk": 2,
+        "fields": {
+            "user": 2,
+            "tag": 2,
+            "image": "",
+            "title": "New title 2",
+            "article_content": "Content of the article goes here...",
+            "created_date": "2023-07-19"
+        }
+    }
+]

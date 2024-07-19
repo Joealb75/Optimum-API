@@ -1,0 +1,26 @@
+[
+    {
+        "model": "OptimumAPI.consultation",
+        "pk": 1,
+        "fields": {
+            "first_name": "John",
+            "last_name": "Doe",
+            "email": "john.doe@example.com",
+            "phone_number": 1234567890,
+            "status": "Pending",
+            "assigned_to_user": 1
+        }
+    },
+    {
+        "model": "OptimumAPI.consultation",
+        "pk": 2,
+        "fields": {
+            "first_name": "Jane",
+            "last_name": "Smith",
+            "email": "jane.smith@example.com",
+            "phone_number": 9876543210,
+            "status": "Completed",
+            "assigned_to_user": 2
+        }
+    }
+]
