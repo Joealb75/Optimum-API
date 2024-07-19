@@ -1,0 +1,16 @@
+[
+    {
+        "model": "OptimumAPI.tags",
+        "pk": 1,
+        "fields": {
+            "name": "Real Estate"
+        }
+    },
+    {
+        "model": "OptimumAPI.tags",
+        "pk": 2,
+        "fields": {
+            "name": "Market Analysis"
+        }
+    }
+]
