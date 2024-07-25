@@ -1,0 +1,18 @@
+[
+    {
+        "model": "OptimumAPI.articletags",
+        "pk": 1,
+        "fields": {
+            "tagID": 1,
+            "articleID": 1
+        }
+    },
+    {
+        "model": "OptimumAPI.articletags",
+        "pk": 2,
+        "fields": {
+            "tagID": 2,
+            "articleID": 2
+        }
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "model": "OptimumAPI.officeuser",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "phone_number": 1234567890,
+            "profession": "Random",
+            "aboutMe": "I Do stuff and things.",
+            "profileImage": "http://example.com/user1.jpg",
+            "isAdmin": true
+        }
+    },
+    {
+        "model": "OptimumAPI.officeuser",
+        "pk": 2,
+        "fields": {
+            "user": 2,
+            "phone_number": 9876543210,
+            "profession": "Random 1",
+            "aboutMe": "I Do things.",
+            "profileImage": "http://example.com/user2.jpg",
+            "isAdmin": false
+        }
+    }
+]

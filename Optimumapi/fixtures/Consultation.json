@@ -1,0 +1,28 @@
+[
+    {
+        "model": "OptimumAPI.consultation",
+        "pk": 1,
+        "fields": {
+            "full_name": "John Doe",
+            "email": "john.doe@example.com",
+            "phone_number": 1234567890,
+            "status": "Pending",
+            "assigned_to_user": 1,
+            "created_date": "2024-07-17",
+            "comment": "This is a test comment"
+        }
+    },
+    {
+        "model": "OptimumAPI.consultation",
+        "pk": 2,
+        "fields": {
+            "full_name": "Jane Smith",
+            "email": "jane.smith@example.com",
+            "phone_number": 9876543210,
+            "status": "Completed",
+            "assigned_to_user": 2,
+            "created_date": "2024-07-16",
+            "comment": "This is a test comment ;asidjbf[asodjbv[aosjdnvao[sjdbvaosjdbojasdbg"
+        }
+    }
+]
