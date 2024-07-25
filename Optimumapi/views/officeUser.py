@@ -3,6 +3,7 @@ from rest_framework.response import Response
 from django.contrib.auth.models import User
 from rest_framework.viewsets import ViewSet
 from OptimumAPI.models import OfficeUser
+from rest_framework.decorators import action
 
 class OfficeUserSerializer(serializers.ModelSerializer):
     user = serializers.PrimaryKeyRelatedField(queryset=User.objects.all())
@@ -58,7 +59,7 @@ class OfficeUserViewSet(ViewSet):
             office_user = OfficeUser.objects.get(pk=pk)
             user = office_user.user
             office_user.delete()
-            user.delete()  # Also delete the associated User
+            user.delete()
             return Response(status=status.HTTP_204_NO_CONTENT)
         except OfficeUser.DoesNotExist:
             return Response({'error': 'OfficeUser not found'}, status=status.HTTP_404_NOT_FOUND)
@@ -67,3 +68,16 @@ class OfficeUserViewSet(ViewSet):
         office_users = OfficeUser.objects.all()
         serializer = OfficeUserSerializer(office_users, many=True)
         return Response(serializer.data)
+    
+    @action(detail=False, methods=['get'])
+    def by_user_id(self, request):
+        user_id = request.query_params.get('user_id')
+        if user_id is None:
+            return Response({'error': 'User ID is required'}, status=status.HTTP_400_BAD_REQUEST)
+        
+        try:
+            office_user = OfficeUser.objects.get(user_id=user_id)
+            serializer = OfficeUserSerializer(office_user)
+            return Response(serializer.data)
+        except OfficeUser.DoesNotExist:
+            return Response({'error': 'OfficeUser not found'}, status=status.HTTP_404_NOT_FOUND)

@@ -1,8 +1,19 @@
+from rest_framework import permissions
 from rest_framework import serializers, status
 from rest_framework.response import Response
 from django.contrib.auth.models import User
 from rest_framework.viewsets import ViewSet
 from OptimumAPI.models import Consultation
+
+class AllowAnyCreatePermission(permissions.BasePermission):
+    
+    #allow unauthenticated users to create consultations.
+    
+    def has_permission(self, request, view):
+        if view.action == 'create':
+            return True
+        # Require authentication for all other actions
+        return request.user and request.user.is_authenticated
 
 class ConsultationSerializer(serializers.ModelSerializer):
     class Meta:
@@ -10,6 +21,7 @@ class ConsultationSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class ConsultationViewSet(ViewSet):
+    permission_classes = [AllowAnyCreatePermission]
 
     def create(self, request):
         serializer = ConsultationSerializer(data=request.data)
