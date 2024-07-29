@@ -10,7 +10,7 @@ class OfficeUserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = OfficeUser
-        fields = ('user', 'phone_number', 'profession',
+        fields = ('id','user', 'phone_number', 'profession',
                   'aboutMe', 'profileImage', 'isAdmin')
         
 class OfficeUserViewSet(ViewSet):
@@ -38,12 +38,6 @@ class OfficeUserViewSet(ViewSet):
     def update(self, request, pk=None):
         try:
             office_user = OfficeUser.objects.get(pk=pk)
-            user_data = request.data.pop('user')
-            user = office_user.user
-
-            for attr, value in user_data.items():
-                setattr(user, attr, value)
-            user.save()
 
             for attr, value in request.data.items():
                 setattr(office_user, attr, value)
@@ -53,6 +47,7 @@ class OfficeUserViewSet(ViewSet):
             return Response(serializer.data)
         except OfficeUser.DoesNotExist:
             return Response({'error': 'OfficeUser not found'}, status=status.HTTP_404_NOT_FOUND)
+
     
     def destroy(self, request, pk=None):
         try:

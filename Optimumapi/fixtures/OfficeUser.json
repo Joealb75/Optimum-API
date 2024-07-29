@@ -4,10 +4,10 @@
         "pk": 1,
         "fields": {
             "user": 1,
-            "phone_number": 1234567890,
-            "profession": "Random",
-            "aboutMe": "I Do stuff and things.",
-            "profileImage": "http://example.com/user1.jpg",
+            "phone_number": "111-111-1111",
+            "profession": "Physician Assistant, Certified",
+            "aboutMe": "<p>Scott is a Physician Assistant and has been practicing since 2003. He earned his Bachelor of Science and Master of Physician Assistant Studies from the University of Nebraska Medical Center.</p><br><p>Scott honorably served in the United States Air Force for 9 years where he earned Air Force Special Ops Command Physician Assistant of the Year. He has a wide range of experience including testosterone replacement therapy for men, family practice, urgent care, emergency room, dermatology, and trauma surgery.</p><br><p>After settling in Hendersonville, TN, Scott saw a unique opportunity to provide healthcare tailored for men and created Optimum Mens Health to serve a wide range of healthcare needs including hormone replacement therapy, primary care, preventative care, and erectile dysfunction.</p><br><p>He has seen first-hand the powerful life changing results men have when undergoing testosterone replacement therapy. His goal is to provide an all-inclusive men’s medical clinic to optimize men’s health so they can live their ultimate life.</p><br><p>Scott resides in Hendersonville with his wife Natalie and two daughters. He enjoys an active lifestyle spending time with his family, working out, hiking, and fly fishing.</p>",
+            "profileImage": "userImages/scottJarrell.jpg",
             "isAdmin": true
         }
     },
@@ -16,11 +16,47 @@
         "pk": 2,
         "fields": {
             "user": 2,
-            "phone_number": 9876543210,
-            "profession": "Random 1",
-            "aboutMe": "I Do things.",
-            "profileImage": "http://example.com/user2.jpg",
+            "phone_number": "111-111-1111",
+            "profession": "Physician Assistant, Certified",
+            "aboutMe": "<p>Michael is a Physician Assistant and has been practicing since 2012. Originally from Memphis, TN, he received his Bachelor of Science in Biology from Harding University in 2009 and his Masters in Science Medicine from Trevecca Nazarene University’s PA Program in 2012. He has experience in community health, family practice, wilderness medicine and dermatology.</p><br><p>Michael is particularly interested in supporting his patients by providing open communication, accountability and lifestyle education in order to help them achieve their health goals and maximize their overall sense of well being.</p><br><p>Michael lives in Nashville with his wife Emily and their two dogs. He is an avid outdoorsman and a passionate climber, backpacker, writer and photographer.</p>",
+            "profileImage": "userImages/michaelDaniel.jpg",
             "isAdmin": false
+        }
+    },
+    {
+        "model": "OptimumAPI.officeuser",
+        "pk": 3,
+        "fields": {
+            "user": 3,
+            "phone_number": "111-111-1111",
+            "profession": "Physician Assistant, Certified",
+            "aboutMe": "<p>Charles is a Physician Assistant practicing since 2018. He earned his Bachelor of Science in Biochemistry and Molecular Biology from Harding University in 2009 and his Master of Physician Assistant Studies from the Massachusetts College of Pharmacy and Health Sciences in 2017. Prior to Optimum Men's Health, he worked in urgent care in New England.</p><br><p>Charles gets a thrill out of seeing goals met. He is dedicated to helping patients reach theirs by leveraging medical evidence, research, and good old-fashioned hard work. He confidently believes people are successful not just after reaching a goal but with every day they get closer.</p><br><p>Charles lives in Hendersonville with his wife, son, and daughter. In his spare time, he reads, plays with his kids, lifts weights, and finds excuses to make spreadsheets.</p>",
+            "profileImage": "userImages/charlesBrewer.jpg",
+            "isAdmin": false
+        }
+    },
+    {
+        "model": "OptimumAPI.officeuser",
+        "pk": 4,
+        "fields": {
+            "user": 4,
+            "phone_number": "111-111-1111",
+            "profession": "Physician Assistant, Certified",
+            "aboutMe": "<p>Originally from Mount Juliet Tennessee, Nick earned his Bachelor of Science in Exercise Science from the University of Tennessee at Chattanooga and his Master of Physician Assistant Studies from South College in Knoxville Tennessee.</p><br><p>Nick enjoys seeing the impact he can have on his patient’s health. He is focused on listening to and addressing patient concerns and helping them reach their goals through lifestyle education, shared decision making, and encouragement through continuity of care.</p><br><p>Nick currently lives in Nashville with his girlfriend and their two dogs. In his spare time, he likes to play golf and soccer. He also enjoys spending time hiking, kayaking, and white water rafting.</p>",
+            "profileImage": "userImages/NickBlevens.jpeg",
+            "isAdmin": false
+        }
+    },
+    {
+        "model": "OptimumAPI.officeuser",
+        "pk": 5,
+        "fields": {
+            "user": 5,
+            "phone_number": "111-111-1111",
+            "profession": "Medical Director",
+            "aboutMe": "<p>Dr. Hill is a board-certified family practice physician. He graduated from the Saba School of Medicine and completed his family practice residency at East Tennessee State University, where he was the chief resident in 2003.</p><br><p>He honorably served in the United States Army for 12 years.</p><br><p>Dr. Hill has worked 5 years in family practice and has been an attending emergency room physician for 12 years. He enjoys spending time with his wife and five children.</p>",
+            "profileImage": "userImages/keithHill.png",
+            "isAdmin": true
         }
     }
 ]

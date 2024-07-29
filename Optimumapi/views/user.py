@@ -22,11 +22,11 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class Users(ViewSet):
-    """Users for B&S
+    """
+    Users for Optimum
     Purpose: Allow a user to communicate with the database to GET PUT POST and DELETE Users.
     Methods: GET PUT(id) POST
-"""
-
+    """
 
     def retrieve(self, request, pk=None):
         """Handle GET requests for single reader
@@ -42,11 +42,21 @@ class Users(ViewSet):
         except Exception as ex:
             return HttpResponseServerError(ex)
 
-
-
     def list(self, request):
         """Handle GET requests to user resource"""
         users = User.objects.all()
         serializer = UserSerializer(
             users, many=True, context={'request': request})
         return Response(serializer.data)
+    
+    def update(self, request, pk=None):
+        """Handle PUT requests for a user"""
+        try:
+            user = User.objects.get(pk=pk)
+            serializer = UserSerializer(user, data=request.data, partial=True, context={'request': request})
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_200_OK)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as ex:
+            return HttpResponseServerError(ex)

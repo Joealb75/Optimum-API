@@ -13,7 +13,7 @@ python3 manage.py migrate
 python3 manage.py makemigrations OptimumAPI
 python3 manage.py migrate OptimumAPI
 python3 manage.py loaddata user
-#python3 manage.py loaddata tokens
+python3 manage.py loaddata tokens.json
 python manage.py loaddata OfficeUser.json
 python manage.py loaddata Consultation.json
 #python manage.py loaddata Tags.json
