@@ -1,18 +1,26 @@
 [
     {
-        "model": "OptimumAPI.articletags",
-        "pk": 1,
-        "fields": {
-            "tagID": 1,
-            "articleID": 1
-        }
+      "model": "OptimumAPI.articletag",
+      "pk": 1,
+      "fields": {
+        "tag": 1,
+        "article": 1
+      }
     },
     {
-        "model": "OptimumAPI.articletags",
-        "pk": 2,
-        "fields": {
-            "tagID": 2,
-            "articleID": 2
-        }
+      "model": "OptimumAPI.articletag",
+      "pk": 2,
+      "fields": {
+        "tag": 2,
+        "article": 2
+      }
+    },
+    {
+      "model": "OptimumAPI.articletag",
+      "pk": 3,
+      "fields": {
+        "tag": 3,
+        "article": 3
+      }
     }
-]
+  ]

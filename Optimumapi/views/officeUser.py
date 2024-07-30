@@ -3,7 +3,8 @@ from rest_framework.response import Response
 from django.contrib.auth.models import User
 from rest_framework.viewsets import ViewSet
 from OptimumAPI.models import OfficeUser
-from rest_framework.decorators import action
+from rest_framework.decorators import action, permission_classes
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 class OfficeUserSerializer(serializers.ModelSerializer):
     user = serializers.PrimaryKeyRelatedField(queryset=User.objects.all())
@@ -58,7 +59,9 @@ class OfficeUserViewSet(ViewSet):
             return Response(status=status.HTTP_204_NO_CONTENT)
         except OfficeUser.DoesNotExist:
             return Response({'error': 'OfficeUser not found'}, status=status.HTTP_404_NOT_FOUND)
-    
+        
+
+    @permission_classes([IsAuthenticatedOrReadOnly])
     def list(self, request):
         office_users = OfficeUser.objects.all()
         serializer = OfficeUserSerializer(office_users, many=True)
