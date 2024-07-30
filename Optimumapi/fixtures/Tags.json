@@ -1,16 +1,24 @@
 [
     {
-        "model": "OptimumAPI.tags",
-        "pk": 1,
-        "fields": {
-            "name": "Real Estate"
-        }
+      "model": "OptimumAPI.tag",
+      "pk": 1,
+      "fields": {
+        "tag": "Health"
+      }
     },
     {
-        "model": "OptimumAPI.tags",
-        "pk": 2,
-        "fields": {
-            "name": "Market Analysis"
-        }
+      "model": "OptimumAPI.tag",
+      "pk": 2,
+      "fields": {
+        "tag": "Fitness"
+      }
+    },
+    {
+      "model": "OptimumAPI.tag",
+      "pk": 3,
+      "fields": {
+        "tag": "Wellness"
+      }
     }
-]
+  ]
+  

@@ -12,6 +12,9 @@ router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'consultation', ConsultationViewSet, 'consultation')
 router.register(r'officeuser', OfficeUserViewSet, 'officeuser')
 router.register(r"users", Users, "user")
+router.register(r'articles',ArticleViewSet, "article")
+router.register(r'tags',TagViewSet, "tag")
+router.register(r'articletags',ArticleTagViewSet, "articletag")
 
 urlpatterns = [
     path('', include(router.urls)),

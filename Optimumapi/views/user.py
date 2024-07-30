@@ -4,7 +4,35 @@ from rest_framework.response import Response
 from rest_framework import serializers
 from rest_framework import status
 from django.contrib.auth.models import User
+from rest_framework.decorators import permission_classes
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
 
+# ------------------------
+"""
+NOTE Need to do more reasearch on how this class is exactly working, I needed to figure out a way 
+to allow any non-auth user to use the "list" method but for security i couldn't allow non-auth users 
+to view the usernames and passwords of the providers so i had ChatGPT help me come up with a solution. 
+
+NOTE My understanding of this class so far:
+"*args" lets the class take any number of arguments 
+When invoked the class takes an argument in this case (IsAuthenticated) and checks to see if the user is
+IF the user has that permission display the values of the username and password field 
+ELSE return None = "Null"
+
+"""
+class RestrictedField(serializers.Field):
+    def __init__(self, permission_class, *args):
+        self.permission_class = permission_class
+        super().__init__(*args)
+
+    def to_representation(self, value):
+        request = self.context['request']
+        view = self.context.get('view', None)
+        if self.permission_class().has_permission(request, view):
+            return value
+        return None
+
+# ------------------------
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     """JSON serializer for Users
@@ -12,6 +40,9 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     Arguments:
         serializers
     """
+    username = RestrictedField(IsAuthenticated)
+    password = RestrictedField(IsAuthenticated)
+
     class Meta:
         model = User
         url = serializers.HyperlinkedIdentityField(
@@ -29,6 +60,7 @@ class Users(ViewSet):
     """
 
     def retrieve(self, request, pk=None):
+        
         """Handle GET requests for single reader
         Purpose: Allow a user to communicate with the database to retrieve  one user
         Methods:  GET
@@ -42,6 +74,7 @@ class Users(ViewSet):
         except Exception as ex:
             return HttpResponseServerError(ex)
 
+    @permission_classes([IsAuthenticatedOrReadOnly])
     def list(self, request):
         """Handle GET requests to user resource"""
         users = User.objects.all()
