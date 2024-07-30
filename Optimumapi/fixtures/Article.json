@@ -1,26 +1,39 @@
 [
     {
-        "model": "OptimumAPI.article",
-        "pk": 1,
-        "fields": {
-            "user": 1,
-            "tag": 1,
-            "image": "",
-            "title": "Some Title",
-            "article_content": "Content of the article goes here...",
-            "created_date": "2023-07-19"
-        }
+      "model": "OptimumAPI.article",
+      "pk": 1,
+      "fields": {
+        "user": 1,
+        "image": null,
+        "title": "The Importance of Health",
+        "article_content": "Health is very important for a fulfilling life.",
+        "created_date": "2023-01-01",
+        "adminApproved": true
+      }
     },
     {
-        "model": "OptimumAPI.article",
-        "pk": 2,
-        "fields": {
-            "user": 2,
-            "tag": 2,
-            "image": "",
-            "title": "New title 2",
-            "article_content": "Content of the article goes here...",
-            "created_date": "2023-07-19"
-        }
+      "model": "OptimumAPI.article",
+      "pk": 2,
+      "fields": {
+        "user": 2,
+        "image": null,
+        "title": "Fitness Tips for Beginners",
+        "article_content": "Here are some tips to get started with fitness.",
+        "created_date": "2023-02-01",
+        "adminApproved": false
+      }
+    },
+    {
+      "model": "OptimumAPI.article",
+      "pk": 3,
+      "fields": {
+        "user": 3,
+        "image": null,
+        "title": "Wellness and Mental Health",
+        "article_content": "Mental health is a crucial part of overall wellness.",
+        "created_date": "2023-03-01",
+        "adminApproved": true
+      }
     }
-]
+  ]
+  
