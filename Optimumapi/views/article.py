@@ -23,7 +23,7 @@ class ArticleViewSet(ViewSet):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
+    
     def retrieve(self, request, pk=None):
         try:
             article = Article.objects.get(pk=pk)
